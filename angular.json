@@ -94,8 +94,42 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "app-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "app-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-angular:serve:production"
+            }
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "223dbc86-425d-4d36-979e-b15ff8f808a7"
   }
 }
